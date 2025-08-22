@@ -1,0 +1,8 @@
+{
+    "parent_sample": "YE_L1_UDI164",
+    "mutant_sample": "YA5_L7_UDI081",
+    "threads": 48,
+    "genome_fasta": "/bios-store1/chenyc/Reference_Source/Arabidopsis_Reference/ath_chr_bwa_index/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa",
+    "fastq_dir": "/bios-store1/chenyc/scripts/renlab_bsa_seq_20250606/test/1_rawdata",
+    "output_dir": "/bios-store1/chenyc/scripts/renlab_bsa_seq_20250606/test"
+  }
