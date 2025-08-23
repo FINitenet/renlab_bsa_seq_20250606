@@ -19,21 +19,28 @@ The pipeline implements a linear data processing workflow with the following sta
 The pipeline integrates three specialized analysis tools for post-variant calling analysis:
 
 ### 1) Delta Index Analysis — bsa_delta_index.R
-Purpose: Calculate and visualize Delta Index (Sample − Parent) for BSA mapping, focusing on G→A / C→T transitions.
-Input: Filtered VCF, parent/sample name prefixes (after BAM name cleanup).
-Output: PDF plot and XLSX table, named as <sample>vs<parent>_Mapping.*.
+Purpose: Calculate and visualize Delta Index (Sample − Parent) for BSA mapping, focusing on G→A / C→T transitions.  
+
+Input: Filtered VCF, parent/sample name prefixes (after BAM name cleanup).  
+
+Output: PDF plot and XLSX table, named as <sample>vs<parent>_Mapping.*.  
+
 
 Usage:
-
+```
 Rscript scripts/bsa_delta_index.R \
   -p <PARENT_PREFIX> \
   -s <SAMPLE_PREFIX> \
   -v <FILTERED_VCF.gz> \
   -o <OUTDIR>
-Notes:
-列名前缀按规则自动清洗（移除路径、_dedup*、_sorted*、.bam 等后缀）。
-亲本粗过滤：GT == "0/0" 的位点保留。
-自动防零除；输出包含 Parent_Index、Sample_Index、Delta_Index。
+```
+Notes:  
+
+列名前缀按规则自动清洗（移除路径、_dedup*、_sorted*、.bam 等后缀）。  
+
+亲本粗过滤：GT == "0/0" 的位点保留。  
+
+自动防零除；输出包含 Parent_Index、Sample_Index、Delta_Index。  
 
 ### 2) QTL-seq Analysis — method_qtlseq.R
 Purpose: Statistical mapping of QTL using QTLseqr.
