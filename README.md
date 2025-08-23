@@ -43,33 +43,40 @@ Notes:
 自动防零除；输出包含 Parent_Index、Sample_Index、Delta_Index。  
 
 ### 2) QTL-seq Analysis — method_qtlseq.R
-Purpose: Statistical mapping of QTL using QTLseqr.
-Input: GATK-formatted variant tables (or converted from VCF).
-Output: CSV results and QTL mapping plots.
+Purpose: Statistical mapping of QTL using QTLseqr.  
 
-Usage:
+Input: GATK-formatted variant tables (or converted from VCF).  
 
+Output: CSV results and QTL mapping plots.  
+
+Usage:  
+```
 Rscript scripts/method_qtlseq.R \
   --input table_for_qtlseq.csv \
   --outdir 5_bsa/qtlseq \
   --win-size 1e6 \
   --step-size 1e5
+```
 
 ### 3) VCF Comparison — compare_vcf_gatk_bcftools.py
-Purpose: Cross-validate variants between GATK 与 BCFtools 调用结果。
-Input: 成对的 VCF 文件。
-Output: Excel 对比报告（匹配/不匹配位点、统计汇总）与 Δ 值直方图。
+Purpose: Cross-validate variants between GATK 与 BCFtools 调用结果。  
+
+Input: 成对的 VCF 文件。  
+
+Output: Excel 对比报告（匹配/不匹配位点、统计汇总）与 Δ 值直方图。  
 
 Usage:
-
+```
 python scripts/compare_vcf_gatk_bcftools.py \
   --gatk 4_variant/gatk_filtered.vcf.gz \
   --bcf  4_variant/bcftools_filtered.vcf.gz \
   --out  5_bsa/vcf_compare
-
+```
 ### Configuration
 
-参考序列、索引路径等在 config.json里维护：
-reference: "/path/to/reference.fa" 
-bwa_index: "/path/to/reference.fa" 
-dbsnp: "/path/to/dbsnp.vcf.gz" 
+参考序列、索引路径等在 config.json里维护：  
+
+reference: "/path/to/reference.fa"  
+
+bwa_index: "/path/to/reference.fa"  
+
