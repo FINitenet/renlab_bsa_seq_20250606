@@ -63,6 +63,6 @@ python scripts/compare_vcf_gatk_bcftools.py \
 ### Configuration
 
 参考序列、索引路径等在 config.json里维护：
-reference: "/path/to/reference.fa"
-bwa_index: "/path/to/reference.fa"
-dbsnp: "/path/to/dbsnp.vcf.gz"
+reference: "/path/to/reference.fa" 
+bwa_index: "/path/to/reference.fa" 
+dbsnp: "/path/to/dbsnp.vcf.gz" 
